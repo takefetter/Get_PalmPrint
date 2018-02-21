@@ -6,11 +6,11 @@ import math
 def process_image(img):
     CORRECTION_NEEDED = False
     # Define lower and upper bounds of skin areas in YCrCb colour space.
-    lower = np.array([0, 135, 60], np.uint8)
+    lower = np.array([0, 139, 60], np.uint8)
     upper = np.array([255, 180, 127], np.uint8)
     # convert img into 300*x large
-    r = 500.0 / img.shape[1]
-    dim = (500, int(img.shape[0] * r))
+    r = 300.0 / img.shape[1]
+    dim = (300, int(img.shape[0] * r))
     img = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
     original = img.copy()
 
